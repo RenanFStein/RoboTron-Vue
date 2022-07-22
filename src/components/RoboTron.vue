@@ -2,7 +2,6 @@
     <div>
         <main>
         <section class="robotron">   
-
                 <img class="robo" :src="'src/assets/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
@@ -86,12 +85,12 @@
                     <label for="color" class="peca-titulo">Escolha a color:</label>
                      <div>
                         <select @click="color($event)" class='form-select' name="color" id="color">
-                            <option value="Amarelo">Amarelo</option>
-                            <option value="Azul">Azul</option>
-                            <option value="Branco">Branco</option>
-                            <option value="Preto">Preto</option>
-                            <option value="Rosa">Rosa</option>
-                            <option value="Vermelho">Vermelho</option>
+                            <option value="amarelo">Amarelo</option>
+                            <option value="azul">Azul</option>
+                            <option value="branco">Branco</option>
+                            <option value="preto">Preto</option>
+                            <option value="rosa">Rosa</option>
+                            <option value="vermelho">Vermelho</option>
                         </select>
                     </div>                    
                 </div>
