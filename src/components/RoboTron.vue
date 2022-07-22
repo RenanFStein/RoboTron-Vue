@@ -1,8 +1,8 @@
 <template>
     <div>
         <main>
-        <section class="robotron">   
-                <img class="robo" :src="'src/assets/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">
+        <section class="robotron">  
+            <img class="robo" :src="'../../public/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
 
