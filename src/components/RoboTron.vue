@@ -74,7 +74,7 @@
                                 <div class="peca">
                                     <label for="" class="peca-titulo">Foguetes</label>
                                     <div class="is-flex">
-                                        <buttom class="button is-danger is-light" @click="subtrair('foguetes')"></buttom>
+                                        <buttom class="button is-danger is-light" @click="subtrair('foguetes')">-</buttom>
                                         <input type="text" class="input is-primary text-center" :value="foguetes" id="foguetes">
                                         <buttom class="button is-success is-light" @click="somar('foguetes')">+</buttom>
                                     </div>
