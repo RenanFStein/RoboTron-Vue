@@ -1,7 +1,7 @@
 <template>
         <div class="columns">
                 <div class="column is-4 is-offset-1 "> 
-                    <img  :src="'../../public/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">   
+                    <img  :src="'/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">   
                 </div>
                 <div class="column is-2 text-center">
                     <div class="box">
