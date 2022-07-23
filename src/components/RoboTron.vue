@@ -1,104 +1,103 @@
 <template>
-    <div>
-        <main>
-        <section class="robotron">  
-            <img class="robo" :src="'../../public/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">
-            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
-        </section>
+        <div class="columns">
 
-
-        <section class="box estatisticas">
-            <div class="estatistica">
-                <p class="estatistica-titulo">Força</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero">{{forca}}</p>
+                <div class="column is-4 is-offset-1 "> 
+                    <img  :src="'../../public/img/robotron-' + (corRobotron) + '.png'" alt="Robotron">   
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Poder</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero">{{poder}}</p>
+                <div class="column is-2 text-center">
+                    <div class="box">
+                         <div class="estatistica">
+                            <p class="estatistica-titulo">Força</p>
+                            <div class="estatistica-valor">
+                                <p class="estatistica-numero">{{forca}}</p>
+                            </div>
+                        </div>
+                        <div class="estatistica">
+                            <p class="estatistica-titulo">Poder</p>
+                            <div class="estatistica-valor">
+                                <p class="estatistica-numero">{{poder}}</p>
+                            </div>
+                        </div>
+                        <div class="estatistica">
+                            <p class="estatistica-titulo">Energia</p>
+                            <div class="estatistica-valor">
+                                <p class="estatistica-numero">{{energia}}</p>
+                            </div>
+                        </div>
+                        <div class="estatistica">
+                            <p class="estatistica-titulo">Velocidade</p>
+                            <div class="estatistica-valor">
+                                <p class="estatistica-numero">{{velocidade}}</p>
+                            </div>
+                        </div>
+                    </div>                       
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Energia</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero">{{energia}}</p>
+                <div class="column is-2  text-center">
+                    <div class="box">
+                        <form action="">
+                            <div>
+                                <div class="peca">
+                                    <label for="" class="peca-titulo">Braços</label>
+                                    <div class="is-flex">                                        
+                                        <buttom class="button is-danger is-light" @click="subtrair('braco')">-</buttom>
+                                        <input type="text" class="input is-primary text-center" :value="braco" id="braco">
+                                        <buttom class="button is-success is-light" @click="somar('braco')">+</buttom>
+                                    </div>
+                                </div>
+                                <hr class="linha">
+                                <div class="peca">
+                                    <label for="" class="peca-titulo">Blindagem</label>
+                                    <div class="is-flex">
+                                        <buttom class="button is-danger is-light" @click="subtrair('blindagem')">-</buttom>
+                                        <input type="text" class="input is-primary text-center" :value="blindagem" id="blindagem">
+                                        <buttom class="button is-success is-light" @click="somar('blindagem')">+</buttom>
+                                    </div>
+                                </div>
+                                <hr class="linha">
+                                <div class="peca">
+                                    <label for="" class="peca-titulo">Núcleos</label>
+                                    <div class="is-flex">
+                                        <buttom class="button is-danger is-light" @click="subtrair('nucleos')">-</buttom>
+                                        <input type="text" class="input is-primary text-center" :value="nucleos" id="nucleos">
+                                        <buttom class="button is-success is-light" @click="somar('nucleos')">+</buttom>
+                                    </div>
+                                </div>
+                                <hr class="linha">
+                                <div class="peca">
+                                    <label for="" class="peca-titulo">Pernas</label>
+                                    <div class="is-flex">
+                                        <buttom class="button is-danger is-light" @click="subtrair('pernas')">-</buttom>
+                                        <input type="text" class="input is-primary text-center" :value="pernas" id="pernas">
+                                        <buttom class="button is-success is-light" @click="somar('pernas')">+</buttom>
+                                    </div>
+                                </div>
+                                <hr class="linha">
+                                <div class="peca">
+                                    <label for="" class="peca-titulo">Foguetes</label>
+                                    <div class="is-flex">
+                                        <buttom class="button is-danger is-light" @click="subtrair('foguetes')"></buttom>
+                                        <input type="text" class="input is-primary text-center" :value="foguetes" id="foguetes">
+                                        <buttom class="button is-success is-light" @click="somar('foguetes')">+</buttom>
+                                    </div>
+                                </div>
+                                <hr class="linha">
+                                <label for="color" class="peca-titulo">Escolha a color:</label>
+                                <div>
+                                    <select @click="color($event)" class='form-select' name="color" id="color">
+                                        <option value="amarelo">Amarelo</option>
+                                        <option value="azul">Azul</option>
+                                        <option value="branco">Branco</option>
+                                        <option value="preto">Preto</option>
+                                        <option value="rosa">Rosa</option>
+                                        <option value="vermelho">Vermelho</option>
+                                    </select>
+                                </div>                    
+                            </div>
+                            <input type="submit" value="Iniciar produção" class="button is-danger is-rounded" id="producao" style="margin-top:15px">
+                        </form>
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Velocidade</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero">{{velocidade}}</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="equipamentos">
-            <form action="" class="montador">
-                <div class="box montador-conteudo">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Braços</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" @click="subtrair('braco')">-</buttom>
-                            <input type="text" class="controle-contador" :value="braco" id="braco">
-                            <buttom class="controle-ajuste" @click="somar('braco')">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Blindagem</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" @click="subtrair('blindagem')">-</buttom>
-                            <input type="text" class="controle-contador" :value="blindagem" id="blindagem">
-                            <buttom class="controle-ajuste" @click="somar('blindagem')">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Núcleos</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" @click="subtrair('nucleos')">-</buttom>
-                            <input type="text" class="controle-contador" :value="nucleos" id="nucleos">
-                            <buttom class="controle-ajuste" @click="somar('nucleos')">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Pernas</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" @click="subtrair('pernas')">-</buttom>
-                            <input type="text" class="controle-contador" :value="pernas" id="pernas">
-                            <buttom class="controle-ajuste" @click="somar('pernas')">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Foguetes</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" @click="subtrair('foguetes')">-</buttom>
-                            <input type="text" class="controle-contador" :value="foguetes" id="foguetes">
-                            <buttom class="controle-ajuste" @click="somar('foguetes')">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <label for="color" class="peca-titulo">Escolha a color:</label>
-                     <div>
-                        <select @click="color($event)" class='form-select' name="color" id="color">
-                            <option value="amarelo">Amarelo</option>
-                            <option value="azul">Azul</option>
-                            <option value="branco">Branco</option>
-                            <option value="preto">Preto</option>
-                            <option value="rosa">Rosa</option>
-                            <option value="vermelho">Vermelho</option>
-                        </select>
-                    </div>                    
-                </div>
-                <input type="submit" value="Iniciar produção" class="producao" id="producao">
-            </form>
-        </section>
-    </main>
-    </div>
 </template>
 
 <script>

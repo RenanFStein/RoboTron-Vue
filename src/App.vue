@@ -1,11 +1,8 @@
-
-
 <template>
-  <main>
+
     <RoboTron/>
     
-    
-  </main>
+  
   
 </template>
 
