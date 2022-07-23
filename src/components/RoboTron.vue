@@ -31,7 +31,7 @@
                         </div>
                     </div>                       
                 </div>
-                <div class="column is-2  text-center">
+                <div class="column is-4  text-center">
                     <div class="box">
                         <form action="">
                             <div>
